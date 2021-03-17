@@ -369,7 +369,12 @@ NA_B_transcontinental_railways_category = {
 
 	USA_railroad_independence_to_salt_lake_city = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_independence_to_salt_lake_city_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_independence_to_salt_lake_city_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -438,7 +443,12 @@ NA_B_transcontinental_railways_category = {
 	}
 	USA_railroad_salt_lake_city_to_sacramento = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_salt_lake_city_to_sacramento_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_salt_lake_city_to_sacramento_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -450,7 +460,12 @@ NA_B_transcontinental_railways_category = {
 	}
 	USA_railroad_salt_lake_city_to_los_angeles = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_salt_lake_city_to_los_angeles_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_salt_lake_city_to_los_angeles_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -501,7 +516,12 @@ NA_B_transcontinental_railways_category = {
 	}
 	USA_railroad_kansas_city_to_stockton = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_kansas_city_to_stockton_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_kansas_city_to_stockton_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -592,7 +612,12 @@ NA_B_transcontinental_railways_category = {
 	}
 	USA_railroad_san_antonio_to_santa_fe = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_san_antonio_to_santa_fe_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_san_antonio_to_santa_fe_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -655,7 +680,12 @@ NA_B_transcontinental_railways_category = {
 	}
 	USA_railroad_san_antonio_to_san_diego = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_san_antonio_to_san_diego_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_san_antonio_to_san_diego_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -724,7 +754,12 @@ NA_B_transcontinental_railways_category = {
 	}
 	USA_railroad_butterfield_overland_mail = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_butterfield_overland_mail_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_butterfield_overland_mail_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -735,7 +770,12 @@ NA_B_transcontinental_railways_category = {
 	}
 	USA_railroad_neosho_to_albuquerque = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_neosho_to_albuquerque_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_neosho_to_albuquerque_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -747,7 +787,12 @@ NA_B_transcontinental_railways_category = {
 	#aka Denver
 	USA_railroad_leavenworth_and_pikes_peak_express = {
 		allowed = { TAG = USA }
-		available = { hidden_trigger = { always = no } }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = USA_railroad_construction_canceled
+				NOT = { has_country_flag = USA_railroad_leavenworth_and_pikes_peak_express_flag }
+			}
+		}
 		activation = { has_country_flag = USA_railroad_leavenworth_and_pikes_peak_express_flag }
 		is_good = yes
 		fire_only_once = yes
@@ -757,7 +802,6 @@ NA_B_transcontinental_railways_category = {
 			
         }
 	}
-	
 	
 	na_b_invest_in_trans_continental_railroad = {
 		allowed = { NA_B_is_american_allowed = yes }
