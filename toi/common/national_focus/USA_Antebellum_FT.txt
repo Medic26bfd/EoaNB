@@ -4841,8 +4841,8 @@
 			}
 			country_event = {
 				id = usa_panic.6
-				days = 20
-				random = 1440
+				random_days = 90
+				#random = 1440
 			}
 		}
 	}
