@@ -68,8 +68,7 @@
 
 			# Spirits
 			add_ideas = { 
-				USA_Spirit_Seminole_War 
-				NA_B_medium_scale_railways 
+				USA_Spirit_Seminole_War  
 				USA_Spirit_Anti_Irish 
 				NA_B_Spirit_New_World_Democracies
 				USA_Spirit_Memories_of_Confederation
