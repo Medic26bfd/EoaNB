@@ -379,7 +379,7 @@ sub_units = {
 	}
 
 	line_infantry = {
-		sprite = infantry
+		sprite = line
 		map_icon_category = infantry
 
 		priority = 600
