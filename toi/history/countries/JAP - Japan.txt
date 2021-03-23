@@ -1,5 +1,5 @@
 ﻿1857.1.1 = {
-	# Setup
+  # Setup
 	capital = 282 # Edo
 	set_research_slots = 2
 
@@ -189,14 +189,14 @@
 	}
 
 	create_corps_commander = {
-			name = "Prince Komatsu Akihito"
-			picture = "Portrait_JAP_Komatsu_Akihito.dds"
-			traits = { infantry_leader }
-			skill = 3
-			attack_skill = 3
+		name = "Prince Komatsu Akihito"
+		picture = "Portrait_JAP_Komatsu_Akihito.dds"
+		traits = { infantry_leader }
+		skill = 3
+		attack_skill = 3
 		defense_skill = 1
 		planning_skill = 2
 		logistics_skill = 2
-		}
 	}
+    }
 }

@@ -2145,7 +2145,7 @@ country_event = {
 					has_country_flag = ita_1861_election_PIE_Crispi_flag
 				}
 				modifier = {
-					factor = 1.2
+					factor = 1.4
 					has_government = social_egalitarianism
 				}
 			}

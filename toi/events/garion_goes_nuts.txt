@@ -1,11 +1,10 @@
-# crisis in the balkans
 add_namespace = G_filler_WWI
 country_event = {
 	id = G_filler_WWI.1
 	title = G_filler_WWI.1.t
 	desc = G_filler_WWI.1.desc
 	picture = GFX_report_event_chinese_army_training
-	
+
 	fire_only_once = yes
 	major = yes
 	trigger = {
@@ -45,7 +44,7 @@ country_event = {
 		ai_chance = {
 			factor = 5
 		}
-		
+
 	}
 	option = {#not worth a war
 		name = G_filler_WWI.1.c

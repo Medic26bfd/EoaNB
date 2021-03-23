@@ -71,7 +71,8 @@ capital = 110
 				freedom_level = 0.2
 			}
 		}
-		else = {
+		if = {
+			limit = { eoanb_enable_autonomy = no }
 			puppet = NOR
 		}
 	}
@@ -129,10 +130,7 @@ capital = 110
 		food_preserving_icebox = 1
 		early_artificial_fertilizer = 1
 		electrical_engineering = 1
-	}
-
-	# MTG and non-MTG tech
-	if = {
+		if = {
 		limit = { has_dlc = "Man the Guns" }
 
 		set_technology = {
@@ -152,6 +150,7 @@ capital = 110
 				tech_naval_early_gunboat = 1
 			}
 		}
+	}
 	}
 
 	set_variable = {
@@ -301,7 +300,7 @@ capital = 110
 				mid_2_custom_slot = ship_cannon_battery_0
 				rear_1_custom_slot = empty
 			}
-	  	}
+		  }
 	
 		create_equipment_variant = {
 			name = "Korvett Klasse"
@@ -316,9 +315,10 @@ capital = 110
 				mid_1_custom_slot = empty
 				front_1_custom_slot = empty
 			}
-	 	}
+		 }
 	  
 		else = { # Load the non-mtg OOB
+			set_naval_oob = "NOR_1857_naval_legacy"
 			create_equipment_variant = {
 				name = "Kanonbåt Klasse"
 				type = ship_gunboat_0
@@ -336,8 +336,6 @@ capital = 110
 				type = ship_corvette_0
 				name_group = GER_CA_HISTORICAL
 			}
-
-			set_naval_oob = "NOR_1857_naval_legacy"
 		}
 	}
 }

@@ -1,21 +1,19 @@
 state = {
-	id = 1420
-	name = STATE_1420 # Putumayo
+	id = 1421
+	name = "STATE_1421" # Amazonía
 	manpower = 1000
 	state_category = pastoral
 
 	resources = {
-		wood = 6
+		wood = 10
 	}
 
 	provinces = {
-		12869
+		5051 8075 10888 11020 13986 
 	}
 
 	history = {
-		owner = COL
-		add_core_of = COL
+		owner = ECU
 		add_claim_by = PRU
-		add_claim_by = ECU
 	}
 }
