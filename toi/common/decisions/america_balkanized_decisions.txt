@@ -805,12 +805,6 @@ NA_B_transcontinental_railways_category = {
 	
 	na_b_invest_in_trans_continental_railroad = {
 		allowed = { NA_B_is_american_allowed = yes }
-		available = {
-			has_completed_focus = NA_B_recon_interstate_railroads
-		}
-		visible = {
-			has_completed_focus = NA_B_recon_interstate_railroads
-		}
 		days_re_enable = 90
 		modifier = {
 			consumer_goods_factor = 0.05
