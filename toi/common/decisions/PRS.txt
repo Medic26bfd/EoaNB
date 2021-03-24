@@ -5853,42 +5853,41 @@ PRS_decision_category_sh_question = {
 		}
 	}
 	
-	#Cooperate with Austria
-	PRS_decision_cooperate_with_austria = {
+	#Support Bundesexekution
+	PRS_decision_support_bundesexekution = {
 		
 		icon = generic_army_support
 		
 		allowed = { tag = PRS }
 		
 		available = {
-			NOT = { has_country_flag = PRS_decision_support_augustenburg_flag }
+			has_war_support > 0.5
 		}
 		
 		visible = {
 			tag = PRS
-			OR = {
-				has_country_flag = PRS_event_federal_execution_granted_flag
-				has_country_flag = PRS_event_federal_execution_denied_flag
-			}
-			NOT = { has_idea = PRS_Friedrich_III }
+			has_country_flag = PRS_denmark_gc_ultimatum_expired_flag
 		}
 		
 		fire_only_once = yes
 		
 		cost = 0
 		
-		days_remove = 35
+		days_remove = 14
+		
+		war_with_on_remove = DEN
 		
 		complete_effect = {
-			if = {
-				limit = {
-					is_historical_focus_on = yes
-				}
-				custom_effect_tooltip = historical_option
-			}
+			PRS = { transfer_state = 949 }
 			add_war_support = 0.05
-			add_opinion_modifier = { target = AUS modifier = PRS_AUS_SCHLESWIG_REL }
-			reverse_add_opinion_modifier = { target = AUS modifier = PRS_AUS_SCHLESWIG_REL }
+			every_other_country = {
+				limit = {
+					has_idea = GER_general_idea_ger_confed
+					NOT = { tag = AUS }
+				}
+				add_opinion_modifier = { target = ROOT modifier = PRS_SCHLESWIG_SUPPORT_BUNDESEXEKUTION_REL }
+				reverse_add_opinion_modifier = { target = ROOT modifier = PRS_SCHLESWIG_SUPPORT_BUNDESEXEKUTION_REL }
+			}
 			hidden_effect = {
 				if = {
 					limit = {
@@ -6035,6 +6034,71 @@ PRS_decision_category_sh_question = {
 				} 
 				remove_ideas = DEN_pomerania_blockade 
 			}
+			hidden_effect = {
+				949 = { 
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		remove_effect = {
+			add_political_power = 50
+			PRS = { country_event = { id = secschwar.52 } }
+			hidden_effect = {
+				clr_country_flag = PRS_denmark_sues_for_peace_flag
+			}
+		}
+		
+		ai_will_do = { base = 10000 }
+	}
+	
+	#Cooperate with Austria
+	PRS_decision_cooperate_with_austria = {
+		
+		icon = generic_army_support
+		
+		allowed = { tag = PRS }
+		
+		available = {
+			NOT = { has_country_flag = PRS_decision_support_augustenburg_flag }
+		}
+		
+		visible = {
+			tag = PRS
+			OR = {
+				has_country_flag = PRS_event_federal_execution_granted_flag
+				has_country_flag = PRS_event_federal_execution_denied_flag
+			}
+		}
+		
+		fire_only_once = yes
+		
+		cost = 0
+		
+		days_remove = 35
+		
+		complete_effect = {
+			add_war_support = 0.05
+			add_opinion_modifier = { target = AUS modifier = PRS_AUS_SCHLESWIG_REL }
+			reverse_add_opinion_modifier = { target = AUS modifier = PRS_AUS_SCHLESWIG_REL }
+			hidden_effect = {
+				set_country_flag = PRS_decision_cooperate_with_austria_flag
+			}
+			custom_effect_tooltip = historical_option
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					PRS = { has_country_flag = PRS_event_federal_execution_denied_flag }
+				}
+				PRS = { country_event = { id = secschwar.23 } }
+				AUS = { country_event = { id = secschwar.23 } }
+			}
 			else_if = {
 				limit = {
 					PRS = { has_country_flag = PRS_event_federal_execution_granted_flag }
@@ -6046,53 +6110,6 @@ PRS_decision_category_sh_question = {
 				clr_country_flag = PRS_event_federal_execution_granted_flag
 				clr_country_flag = PRS_event_federal_execution_denied_flag
 				clr_country_flag = PRS_decision_cooperate_with_austria_flag
-			}
-		}
-		
-		ai_will_do = { base = 10000 }
-	}
-	
-	#Support Bundesexekution
-	PRS_decision_support_bundesexekution = {
-		
-		icon = generic_army_support
-		
-		allowed = { tag = PRS }
-		
-		available = {
-			has_war_support > 0.5
-		}
-		
-		visible = {
-			tag = PRS
-			has_country_flag = PRS_denmark_gc_ultimatum_expired_flag
-		}
-		
-		fire_only_once = yes
-		
-		cost = 0
-		
-		days_remove = 14
-		
-		war_with_on_remove = DEN
-		
-		complete_effect = {
-			add_war_support = 0.05
-			every_other_country = {
-				limit = {
-					has_idea = GER_general_idea_ger_confed
-					NOT = { tag = AUS }
-				}
-				add_opinion_modifier = { target = ROOT modifier = PRS_SCHLESWIG_SUPPORT_BUNDESEXEKUTION_REL }
-				reverse_add_opinion_modifier = { target = ROOT modifier = PRS_SCHLESWIG_SUPPORT_BUNDESEXEKUTION_REL }
-			}
-		}
-		
-		remove_effect = {
-			custom_effect_tooltip = PRS_DEN_sh_war_effect_tt
-			PRS = { country_event = { id = secschwar.49 } }
-			hidden_effect = {
-				clr_country_flag = PRS_denmark_gc_ultimatum_expired_flag
 			}
 		}
 		
@@ -6138,13 +6155,13 @@ PRS_decision_category_sh_question = {
 		ai_will_do = { base = 10000 }
 	}
 	
-	#Peace of Frankfurt
-	PRS_decision_peace_of_frankfurt = {
+	#The London Conference
+	PRS_mission_london_conference = {
+        
+		icon = generic_nationalism
 		
-		icon = generic_army_support
-		
-		allowed = { tag = PRS }
-		
+		allowed = { always = no }
+        
 		available = {
 			if = {
 				limit = {
@@ -6186,10 +6203,11 @@ PRS_decision_category_sh_question = {
 			}
         }
 		
-		visible = {
-			tag = PRS
-			has_global_flag = eoanb_flag_second_schleswig_war_gc
-		}
+		activation = { always = no }
+
+		selectable_mission = no
+
+        is_good = no
 		
         days_mission_timeout = 500
 
@@ -6342,10 +6360,8 @@ PRS_decision_category_sh_question = {
 					AUS = { country_event = { id = secschwar.77 } }
 				}
 			}
-		}
-		
-		ai_will_do = { base = 10000 }
-	}
+        }
+    }
 	
 	#Peace of Vienna
 	PRS_decision_peace_of_vienna = {
@@ -6361,7 +6377,6 @@ PRS_decision_category_sh_question = {
 		visible = {
 			tag = PRS
 			has_global_flag = eoanb_flag_second_schleswig_war
-			has_global_flag = london_conference_happened
 			has_country_flag = PRS_london_conference_breakdown_flag
 		}
 		
@@ -8650,6 +8665,7 @@ PRS_decision_category_Friedrich_III = {
 		complete_effect = {
 			custom_effect_tooltip = PRS_decision_propose_furstentag_complete_effect_tt
 			hidden_effect = {
+				set_variable = { var = PRS_bundesreform_furstentag_attendance value = 1 }
 				every_other_country = {
 					limit = {
 						has_idea = GER_general_idea_ger_confed
@@ -8660,6 +8676,7 @@ PRS_decision_category_Friedrich_III = {
 					country_event = { days = 1 id = sevenweekswar.114 }
 				}
 				AUS = { country_event = { days = 1 id = sevenweekswar.115 } }
+				PRS = { country_event = { days = 28 id = sevenweekswar.120 } }
 			}
 		}
 		
@@ -8669,8 +8686,16 @@ PRS_decision_category_Friedrich_III = {
 				if = {
 					limit = {
 						has_country_flag = PRS_THU_venue_accepted_flag
+						NOT = { has_country_flag = PRS_bundesreform_furstentag_attendance_too_low_flag }
 					}
-					PRS = { country_event = { days = 1 id = sevenweekswar.120 } }
+					PRS = { country_event = { days = 1 id = sevenweekswar.122 } }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = PRS_THU_venue_accepted_flag }
+						NOT = { has_country_flag = PRS_bundesreform_furstentag_attendance_too_low_flag }
+					}
+					PRS = { country_event = { days = 1 id = sevenweekswar.123 } }
 				}
 				else = {
 					PRS = { country_event = { days = 1 id = sevenweekswar.121 } }
